@@ -18,7 +18,6 @@ find_package(Boost REQUIRED COMPONENTS signals)
 catkin_package(
     CATKIN_DEPENDS
         roscpp
-        rospy
 )
 
 include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
@@ -32,11 +31,11 @@ target_link_libraries(fake_localization
 add_dependencies(fake_localization nav_msgs_gencpp)
 add_dependencies(fake_localization geometry_msgs_gencpp)
 
-install(
-    PROGRAMS
-       static_odom_broadcaster.py
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(
+#    PROGRAMS
+#       static_odom_broadcaster.py
+#    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#)
 
 install(
     TARGETS
